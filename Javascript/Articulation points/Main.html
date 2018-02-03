@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TP Point d'articulations</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/style.min.css" />
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+        }
+
+        #control_buttons input:hover, input.clicked {
+            background-color: #fafafa;
+        }
+        #control_buttons input {
+            border: 0;
+            width: 40px;
+            height: 40px;
+        }
+        input:not([type=button]), select, textarea {
+            padding: 4px;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            line-height: normal;
+        }
+
+    </style>
+
+
+    <script src='js/jquery.js'></script>
+
+</head>
+
+
+<body class="eccp fr" >
+
+<div id="wrapper">
+    <!-- Sidebar -->
+
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="heading">
+                    <h1 id ="step1" style="text-align: center;">ENJOY ;)</h1>
+                </div>
+
+                </div>
+            <div class="row" id="control_buttons" style="margin-left: 3px">
+                <input type="image" id="undo" title="undo" src="img/undo.png" alt="undo" onclick="graphWin.undo()" class="">
+                <input type="image" id="redo" title="redo" src="img/redo.png" alt="redo" onclick="graphWin.redo()" class="clicked" />
+                <input type="image" id="startover" title="start over" src="img/loop2.png" alt="edit" onclick="graphWin.clear()" />
+            </div>
+            <div class="row" >
+                <div class="col-md-12"  >
+                    <div class="well content">
+
+               <iframe id='graph' scrolling='no' sandbox='allow-scripts allow-forms allow-same-origin' marginwidth='0' marginheight='0' frameborder='0' src='graph.html'></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:15px">
+                <div class="copywrite text-center">
+                    <div class="col-md-4 col-md-offset-4">
+                        <p>TP N°2 de TPGO Réalisé par :BOUBECHTOULA Walid & MAHMOUDI Issam SIQG01 </p>
+                        <p >Copyright © 2016 . Tous droits réservés</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+
+    // this is needed before the graph iframe loads and renders using the x/ybounds
+    $('graph').ready(function () {
+        graphWin = document.getElementById('graph').contentWindow;
+        // dynamically reset force layout bounds on resize event completion
+
+    });
+
+
+</script>
+</html>
