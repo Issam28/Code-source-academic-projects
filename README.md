@@ -1,2 +1,2 @@
 # some-code-source
-this repo contains code source of some projects that i have done or contributed to .
+This repo contains code source of some academic projects that I have done or contributed to.
